@@ -19,8 +19,11 @@ var commentRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 //mongoose.connect('mongodb://localhost:27017/yelp_camp_v11', { useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true } );
+//mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true } );
+// then(() => console.log(`Database connected at ${process.env.DATABASEURL}`))
+//       .catch(err => console.log(`Database connection error: ${err.message}`));
 //mongodb://ziyezhu:ziye1202@ds121982.mlab.com:21982/yelpcamp
+mongoose.connect('mongodb://ziyezhu:ziye1202@ds121982.mlab.com:21982/yelpcamp', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
